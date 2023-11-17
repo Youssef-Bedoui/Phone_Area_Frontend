@@ -1,0 +1,29 @@
+.MostVisitedArticle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 80%;
+  margin: 0 auto;
+  .art_img {
+    height: 70%;
+    width: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+  .art_details {
+    .art_title {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
+  &:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+

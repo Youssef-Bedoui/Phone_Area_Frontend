@@ -1,0 +1,107 @@
+.articleDetails {
+  min-height: 100vh;
+  width: 70%;
+  margin: 40px 5%;
+
+  .title {
+    color: #fcc110;
+    font-size: 35px;
+    letter-spacing: 2px;
+  }
+  .published {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 17px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    color: lightgray;
+    text-shadow: 1px 1px 3px #000000;
+    font-weight: 400;
+    .clock_icon {
+      margin-right: 10px;
+    }
+  }
+  .article_img {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .desc_parag {
+    line-height: 20px;
+    .singleParag {
+      margin: 0;
+      .inner_title{
+        color: aqua;
+        border-bottom: 2px solid aqua;
+        padding-bottom: 5px;
+        width: fit-content;
+        letter-spacing: 1px;
+        margin: 5px 0;
+      }
+      .paragraph {
+        font-size: 17px;
+        color: #fff;
+        text-shadow: 0px 0px 5px #000000;
+        font-family: "Inter", sans-serif;
+        margin: 15px 0;
+      }
+    }
+    .source {
+      color: #000000;
+      font-size: 18px;
+      text-decoration: none;
+      border-bottom: 1px solid #000000;
+      &:hover {
+        cursor: pointer;
+        color: #dd3f3f;
+        border-bottom: 1px solid #dd3f3f;
+        transition: 0.2s ease;
+      }
+    }
+  }
+}
+.moreArticles {
+  width: 70%;
+  flex: 1;
+  margin: 40px 5%;
+  background-color: #ffffff9d;
+  border: 1px solid #000000;
+  .more_title {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+  }
+  .more_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .articleDetails {
+    width: 95%;
+    min-height: fit-content;
+    margin: 20px auto;
+    margin-bottom: 40px;
+    .title {
+      font-size: 25px;
+    }
+    .published {
+      font-size: 14px;
+    }
+  }
+  .moreArticles {
+    width: 95%;
+    margin: 20px auto;
+  }
+}

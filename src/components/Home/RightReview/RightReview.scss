@@ -1,0 +1,40 @@
+.rightReview {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  width: 90%;
+  height: 100px;
+  margin: 0 auto;
+  &:hover{
+    cursor: pointer;
+  }
+  &:hover .review_title{
+text-decoration: underline;
+  }
+  .art_img {
+    width: 40%;
+    height: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+  .art_details {
+    width: 60%;
+    .review_title {
+      color: #17171C;
+      font-size: 15px;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .review_date {
+      margin: 5px 0;
+      font-size: 13px;
+    }
+  }
+}

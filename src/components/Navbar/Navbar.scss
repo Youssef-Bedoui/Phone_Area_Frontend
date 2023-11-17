@@ -1,0 +1,111 @@
+$mainColor: #fdfa2d;
+
+#navbar {
+  min-height: 80px;
+  min-width: 100%;
+  margin: 0;
+  background-color: #17171c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 5px 9px #17171c;
+
+  a {
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    height: 80px;
+    max-width: 200px;
+    margin-right: 100px;
+    margin-left: 30px;
+
+    .logo_img {
+      width: auto;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+  .menu {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    gap: 0 30px;
+    .menuLinkItem {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px;
+      font-size: 20px;
+      &:first-child {
+        color: #fffb0d;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: #fdf92d63;
+        transition: 0.2s ease;
+      }
+    }
+    .active {
+      color: $mainColor;
+      border-bottom: 3px solid $mainColor;
+    }
+    .search {
+      background-color: transparent;
+      border: none;
+      position: relative;
+      margin-left: auto !important;
+      margin-right: 10px;
+      .searchIcon {
+        height: 35px;
+        width: 35px;
+        color: #fdfa2d;
+        position: relative;
+        top: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    width: auto;
+    position: relative;
+
+    .logo {
+      margin: 0 auto;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px 10px;
+      margin: 0 auto;
+      .menuLinkItem {
+        padding: 0;
+        text-align: center;
+        font-size: 16px;
+        margin: 7px;
+        flex-wrap: nowrap;
+        min-width: fit-content;
+        flex: 1;
+      }
+      .search {
+        margin: 0 auto;
+        .searchIcon {
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
+}

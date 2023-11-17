@@ -1,0 +1,29 @@
+.terms {
+  width: 70%;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: 20px;
+  border-left: 4px solid #000000;
+  padding-left: 20px;
+  font-family: "Inter", sans-serif;
+
+  .terms_title {
+    font-size: 35px;
+    color: #fdfa2d;
+    text-decoration: underline;
+    font-family: "Oswald",sans-serif
+  }
+  .text {
+    color: #fff;
+    line-height: 30px;
+    .heading {
+      display: block;
+      text-decoration: underline;
+      color: aqua;
+    }
+  }
+  @media (max-width: 780px) {
+    width: 95%;
+    margin: 40px auto;
+  }
+}

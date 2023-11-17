@@ -1,0 +1,58 @@
+.largeCard {
+  width: 60%;
+  max-width: 100%;
+  margin: 20px auto;
+  height: 70vh;
+  border-radius: 10px;
+  position: relative;
+  @media (max-width: 1024px) {
+    height: 50vh;
+    width: 90%;
+    margin: 40px auto;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  .mainImage {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 5px #17171c;
+    }
+  }
+  .mainTitle {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    top: 70%;
+    right: 0px;
+    background-color: #17171c56;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    h3 {
+      color: #fff;
+      font-size: 30px;
+    }
+  }
+}
+@media (max-width: 780px) {
+  .largeCard {
+    height: 60%;
+    .mainImage {
+      height: 100%;
+    }
+    .mainTitle {
+      h3{
+      font-size: 25px !important;
+      margin-bottom: 40px;
+      }
+    }
+  }
+}

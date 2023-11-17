@@ -1,0 +1,35 @@
+.TopSearchedPhones {
+  margin-top: 50px;
+  height: fit-content;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px 0;
+  margin: 10px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  .title {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    color: #f57035;
+    text-shadow: 1px 1px 3px #ffffff;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f57035;
+    .fire_icon {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .TopSearchedPhones {
+    width: 90%;
+    margin: 20px auto;
+  }
+}

@@ -1,0 +1,53 @@
+.apps {
+  min-height: 100vh;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+  .recommendedApps {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: fit-content;
+    padding-top: 10px;
+    background-color: #00000075;
+    .recommended_title {
+      color: aqua;
+      text-indent: 10px;
+    }
+  }
+
+  .rightApps {
+    width: 70%;
+    margin: 0 auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 780px) {
+  .apps {
+    display: flex;
+    flex-direction: column;
+    .recommendedApps {
+      width: 90%;
+      margin: 40px auto;
+      order: 2;
+    }
+    .rightApps{
+        width: 90%;
+        margin: 40px auto;
+        display: flex;
+        justify-content: center;
+    }
+  }
+}

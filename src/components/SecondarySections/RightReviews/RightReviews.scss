@@ -1,0 +1,35 @@
+.rightReviews {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+
+  .title {
+    border-bottom: 2px solid #17171c;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .more {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #3b3b3b;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+      color: #17171c;
+      text-decoration: underline;
+      transition: 0.2s ease;
+      transform: translateX(3px);
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .rightReviews {
+    width: 90%;
+    margin: 20px auto;
+  }
+}

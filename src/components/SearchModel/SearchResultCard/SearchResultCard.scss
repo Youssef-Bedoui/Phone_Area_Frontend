@@ -1,0 +1,34 @@
+.resultCard {
+  height: 100px;
+  flex: 1 0 calc(33.33% - 20px); // Three cards in a line with 20px gap
+  max-width: calc(33.33% - 20px); // Three cards in a line with 20px gap
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  @media (max-width: 780px) {
+    width: 90% !important;
+    min-width: fit-content;
+  }
+  .result_image {
+    width: 100px;
+    height: 90%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .result_title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,48 @@
+.rightCards {
+  height: fit-content;
+  width: 300px;
+  min-height: 20  0px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  .image_cont {
+    height: 200px;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+    h6 {
+      margin-top: 3px;
+      margin-bottom: 5px;
+      font-size: 23px;
+      color: #fff;
+      letter-spacing: 1px;
+      line-height: 2rem;
+    }
+    &:hover {
+      cursor: pointer;
+      img,
+      h6 {
+        transform: scale(1.01);
+        transition: 0.3s ease;
+        color: #fdd72d;
+      }
+    }
+}
+@media (max-width: 780px) {
+  .rightCards{
+    .image_cont{
+      height: 100px;
+    }
+    h6{
+      font-size: 18px;
+    }
+  }
+}

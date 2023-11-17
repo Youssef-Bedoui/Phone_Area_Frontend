@@ -1,0 +1,36 @@
+.bottomCard {
+  height: 200px;
+  flex: 1;
+  position: relative;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  h3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    color: #fcd010;
+    text-shadow: 1px 0px 5px #000000;
+    background-color: #00000065;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    h3 {
+      text-shadow: 0 0 15px #000000;
+      transition: 0.2s ease;
+    }
+  }
+}
+@media (max-width:780px) {
+  .bottomCard{
+    flex:1 40%;
+    margin: 0 auto;
+  }
+}

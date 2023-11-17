@@ -1,0 +1,31 @@
+.models {
+  padding: 10px;
+  border: 1px solid lightgray;
+  background-image: linear-gradient(120deg, #0000007e 0%, #4a4b4b 100%);
+  border-radius: 5px;
+  .models_title {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 20px;
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  ul {
+    list-style: none;
+    color: #fdfa2d;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px 10px;
+    li {
+      min-width: 70px;
+      max-width: fit-content;
+      text-transform: uppercase;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
