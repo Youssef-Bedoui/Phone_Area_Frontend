@@ -5,7 +5,7 @@
   img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   h3 {
     position: absolute;
@@ -14,7 +14,7 @@
     left: 0;
     padding: 10px;
     color: #fcd010;
-    text-shadow: 1px 0px 5px #000000;
+    text-shadow: 1px 1px 5px #000000;
     background-color: #00000065;
     font-weight: 400;
     font-size: 18px;
@@ -28,9 +28,10 @@
     }
   }
 }
-@media (max-width:780px) {
-  .bottomCard{
-    flex:1 40%;
+@media (max-width: 780px) {
+  .bottomCard {
+    width: 100%;
+    flex: 1;
     margin: 0 auto;
   }
 }

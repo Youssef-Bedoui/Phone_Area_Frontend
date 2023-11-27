@@ -20,6 +20,7 @@ function RightReview({ article }) {
           src={article.images[0]}
           alt={article.title}
           title={article.title}
+          srcSet={`${article.images[0]} 480w`}
         />
       </div>
       <div className="art_details">

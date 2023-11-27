@@ -4,7 +4,7 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Reviews from "./components/Reviews/Reviews";
 import Contact from "./components/Contact/Contact";
-import Footer from "./Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
 import PhoneDeals from "./components/PhoneDeals/PhoneDeals";
 import Privacy from "./components/Privacy/Privacy";

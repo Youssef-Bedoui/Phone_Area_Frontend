@@ -6,11 +6,11 @@
   width: 90%;
   height: 100px;
   margin: 0 auto;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
-  &:hover .review_title{
-text-decoration: underline;
+  &:hover .review_title {
+    text-decoration: underline;
   }
   .art_img {
     width: 40%;
@@ -18,13 +18,13 @@ text-decoration: underline;
     img {
       height: 100%;
       width: 100%;
-      object-fit: fill;
+      object-fit: contain;
     }
   }
   .art_details {
     width: 60%;
     .review_title {
-      color: #17171C;
+      color: #17171c;
       font-size: 15px;
       margin: 0;
       display: -webkit-box;

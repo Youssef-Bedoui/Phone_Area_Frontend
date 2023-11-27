@@ -8,26 +8,28 @@ import AdsComponent from "../AdsComponent/AdsComponent";
 
 function PhoneApps() {
   const dispatch = useDispatch();
-  const PhoneApps = useSelector((state) => state.PhoneApps.appArticles);
+  const phoneApps = useSelector((state) => state.PhoneApps.appArticles);
 
   useEffect(() => {
     dispatch(fetchApps({}));
   }, [dispatch]);
 
+  useEffect(() => {
+    window.scrollTo("top", 0);
+  });
+
   return (
     <div className="apps">
       <div className="recommendedApps">
         <AdsComponent />
-
         <h3 className="recommended_title">RECOMMENDED APPS</h3>
-        {PhoneApps.slice(0.5).map((article) => (
+        {phoneApps.slice(0.5).map((article) => (
           <RecommendedCard article={article} key={article.id} />
         ))}
       </div>
       <AdsComponent />
-
       <div className="rightApps">
-        {PhoneApps.map((appCard) => (
+        {phoneApps.map((appCard) => (
           <SingleAppCard article={appCard} key={appCard.id} />
         ))}
       </div>

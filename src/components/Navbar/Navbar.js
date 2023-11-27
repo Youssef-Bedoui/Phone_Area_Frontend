@@ -14,6 +14,8 @@ function Navbar() {
           className="logo_img"
           src="assets/images/logo.png"
           alt="PhoneArea_logo"
+          loading="lazy"
+          srcSet="assets/images/logo.png 480w, assets/images/logo.png 800w, assets/images/logo.png 1200w"
         />
       </NavLink>
       <div className="menu">

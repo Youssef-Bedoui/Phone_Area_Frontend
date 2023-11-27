@@ -16,7 +16,12 @@ function RightMainCard({ article }) {
       }}
     >
       <div className="image_cont">
-        <img src={article.images[0]} alt={article.title} title={article.title} />
+        <img
+          src={article.images[0]}
+          alt={article.title}
+          title={article.title}
+          srcSet={`${article.images[0]} 480w`}
+        />
       </div>
       <h6>{article.title}</h6>
     </div>

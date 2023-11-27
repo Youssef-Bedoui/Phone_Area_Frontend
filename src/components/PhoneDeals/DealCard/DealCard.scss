@@ -1,6 +1,7 @@
 .phoneCard {
   height: 250px;
-  background-image: linear-gradient(to left, #434343 70%, black 100%);
+  width: 100%;
+  background-image: linear-gradient(to left, #a7a6a6 60%, rgb(255, 255, 255) 100%);
   box-shadow: 2px 4px 5px #000000;
   border-radius: 4px;
   display: flex;
@@ -8,6 +9,8 @@
   align-items: center;
   padding: 5px;
   text-decoration: none !important;
+  filter: contrast(1.2);
+
   .phone_img {
     height: 100%;
     width: 200px;
@@ -16,7 +19,7 @@
     img {
       height: 100%;
       width: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
   .phoneDetails {
@@ -30,11 +33,11 @@
       justify-content: space-between;
       align-items: center;
       .phoneTitle {
-        color: #fdc62d;
+        color: #000000;
         letter-spacing: 1px;
-        text-shadow: 1px 2px 3px #000000;
         margin-top: 5px;
         font-size: 30px;
+        font-weight: 500;
       }
       .store {
         height: 50px;
@@ -48,36 +51,54 @@
       }
     }
     .phoneDescription {
-      color: #fff;
-      text-shadow: 1px 1px 2px rgb(41, 41, 41);
+      color: #000000;
       font-family: "Inter", sans-serif;
+      border-bottom: 1px solid gray;
+      padding-bottom: 5px;
     }
     .phone_spec {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: flex-start;
-      font-weight: bold;
-      text-shadow: 1px 1px 3px rgb(0, 0, 0);
-      color: #fdc62d;
-      letter-spacing: 1px;
+      align-items: flex-start;
+      font-weight: 400;
+      color: #000000;
       margin-bottom: 10px;
-      .spec_item {
+      .three_items {
         display: flex;
-        align-items: center;
         justify-content: center;
-        .spec_data {
-          margin-left: 10px;
+        align-items: flex-start;
+        flex-direction: column;
+        &:first-child {
+          border-right: 2px solid gray;
+          padding-right: 5px;
+        }
+        &:last-child {
+          padding-left: 5px;
+        }
+        .spec_item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .spec_icon {
+            color: #222222;
+          }
+          .spec_data {
+            margin-left: 10px;
+          }
         }
       }
     }
     .price_sec {
       position: absolute;
       bottom: 10px;
-      right: 10px;
+      right: 0px;
+      background-color: #222222;
+      border-radius: 20px 0;
+      padding: 5px;
       .price {
         font-size: 30px;
-        text-decoration: underline;
-        color: yellowgreen;
+        color: gold;
         text-shadow: 1px 1px 5px #000000;
         position: relative;
       }
@@ -91,45 +112,55 @@
         padding: 2px;
       }
     }
-    &:hover {
-      cursor: pointer;
-      transform: translateX(3px);
-      transition: 0.3s ease;
-    }
+  }
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px gray;
+    transition: 0.1s ease;
+    filter: contrast(1.2);
   }
 }
 @media (max-width: 700px) {
-  .phoneCard{
+  .phoneCard {
     height: 200px;
-    .phone_img{
+    .phone_img {
       width: 100px;
       height: 100%;
       margin: 0 auto;
-    }
-  .phoneDetails {
-    .titleCont {
-      .phoneTitle {
-        font-size: 20px !important;
-      }
-      .store {
-        width: 50px !important;
+      padding: 0;
+      img{
+      object-fit: contain;
       }
     }
-    .phoneDescription {
-      font-size: 12px;
-      margin-top: 0;
-    }
-    .phone_spec {
-      font-size: 12px;
-    }
-    .price_sec {
-      .price {
-        font-size: 25px !important;
+    .phoneDetails {
+      .titleCont {
+        .phoneTitle {
+          font-size: 20px !important;
+        }
+        .store {
+          width: 50px !important;
+        }
       }
-      .discount {
-        font-size: 13px !important;
+      .phoneDescription {
+        font-size: 12px;
+        margin-top: 0;
+      }
+      .phone_spec {
+        font-size: 10px;
+      }
+      .spec_data {
+        margin-left: 2px !important;
+      }
+      .price_sec {
+        position: absolute;
+        bottom: 30px;
+        .price {
+          font-size: 18px !important;
+        }
+        .discount {
+          font-size: 12px !important;
+        }
       }
     }
   }
-}
 }

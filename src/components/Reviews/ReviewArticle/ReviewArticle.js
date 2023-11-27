@@ -22,13 +22,15 @@ function ReviewArticle({ article }) {
       }}
     >
       <div className="review_img">
-        <img src={article.images[0]} alt={article.title} />
+        <img
+          src={article.images[0]}
+          alt={article.title}
+          srcSet={`${article.images[0]} 480w`}
+        />
       </div>
       <div className="review_details">
         <h3 className="review_title">{article.title}</h3>
-        <p className="review_description">
-          {article.description[0].paragraph}
-        </p>
+        <p className="review_description">{article.description[0].paragraph}</p>
         <span className="review_date">
           <AccessTimeIcon className="clock_icon" />
           {formattedDate}

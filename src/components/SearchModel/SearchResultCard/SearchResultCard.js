@@ -4,21 +4,26 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { hideSearchModal } from "../../../Redux/features/HomeSlice";
 
-function SearchResultCard({ article, title }) {
+function SearchResultCard({ article }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const handleCardClick = () => {
+    navigate(`/article/${article.title}`, {
+      state: { article: article },
+    });
+    dispatch(hideSearchModal());
+  };
+
   return (
-    <div
-      className="resultCard"
-      onClick={() => {
-        navigate(`/article/${article.title}`, {
-          state: { article: article },
-        });
-        dispatch(hideSearchModal());
-      }}
-    >
+    <div className="resultCard" onClick={handleCardClick}>
       <div className="result_image">
-        <img src={article.images[0]} alt={article.title} />
+        <img
+          src={article.images}
+          alt={article.title}
+          loading="lazy"
+          srcSet={`${article.images} 480w`}
+        />
       </div>
       <h4 className="result_title">{article.title}</h4>
     </div>

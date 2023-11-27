@@ -2,8 +2,8 @@ import React from "react";
 import "./RecommendedCard.scss";
 import { useNavigate } from "react-router-dom";
 
-function RecommendedCard({article}) {
-    const navigate = useNavigate();
+function RecommendedCard({ article }) {
+  const navigate = useNavigate();
   return (
     <div
       className="recommendedCard"
@@ -18,6 +18,7 @@ function RecommendedCard({article}) {
           src={article.images[0]}
           alt={article.title}
           title={article.title}
+          srcSet={`${article.images[0]} 480w`}
         />
         <h3 className="recomm_title">{article.title}</h3>
       </div>

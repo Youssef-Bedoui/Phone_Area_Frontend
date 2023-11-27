@@ -1,0 +1,92 @@
+$primaryColorText: #02c8f1;
+
+#contact {
+  min-height: calc(100vh - 80px);
+  width: 80%;
+  margin: 0 auto;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid $primaryColorText;
+  .left_section,
+  .right_section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .left_section {
+    h3 {
+      font-size: 30px;
+      margin: 20px auto;
+      position: relative;
+      .line {
+        position: absolute;
+        bottom: -10;
+        left: 0;
+        height: 4px;
+        width: 30%;
+        background-color: $primaryColorText;
+      }
+    }
+    P,
+    a {
+      margin: 3px auto;
+      color: $primaryColorText;
+    }
+    .mail_icon {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  .right_section {
+    h3 {
+      font-size: 30px;
+      margin: 20px auto;
+      position: relative;
+      .line {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        height: 4px;
+        width: 30%;
+        background-color: $primaryColorText;
+      }
+    }
+    .input,
+    .messageArea {
+      padding: 10px;
+      width: 100%;
+      color: #fff;
+      background-color: transparent;
+      border: 2px solid $primaryColorText;
+    }
+    .input {
+      margin: 10px 0;
+    }
+    .messageArea {
+      min-height: 150px;
+    }
+    .submitBtn {
+      padding: 10px;
+      margin: 20px;
+      width: 100%;
+      background-color: $primaryColorText;
+      color: #000000;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+        outline: 2px solid $primaryColorText;
+        color: #fff;
+        background-color: transparent;
+        transition: 0.1s ease;
+      }
+    }
+  }
+}

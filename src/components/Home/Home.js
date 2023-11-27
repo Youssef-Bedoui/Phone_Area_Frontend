@@ -1,4 +1,3 @@
-// Home.js
 import React, { useEffect } from "react";
 import "./Home.scss";
 import MainHomeCard from "./MainHomeCard/MainHomeCard";
@@ -14,7 +13,6 @@ import {
   hideSearchModal,
 } from "../../Redux/features/HomeSlice";
 import RightReviews from "../SecondarySections/RightReviews/RightReviews";
-import TopSearchedPhones from "../SecondarySections/TopSearchedPhones/TopSearchedPhones";
 import AdsComponent from "../AdsComponent/AdsComponent";
 import {
   selectMainArticle,
@@ -64,7 +62,6 @@ function Home() {
         <div className="rightSection">
           <AdsComponent />
           <RightReviews />
-          <TopSearchedPhones />
         </div>
       </div>
     </div>

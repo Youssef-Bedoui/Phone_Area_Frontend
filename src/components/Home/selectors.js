@@ -29,6 +29,6 @@ export const selectHomeArticles = createSelector(
   (homeArticles) => homeArticles
 );
 export const selectReviewsArticles = createSelector(
-  [selectHome],
+  [selectReviews],
   (selectReviews) => selectReviews
 );

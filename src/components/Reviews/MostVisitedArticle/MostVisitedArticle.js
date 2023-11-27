@@ -10,14 +10,15 @@ function MostVisitedArticle({ article }) {
       state: { article: article },
     });
   };
-  
+
   return (
-    <div className="MostVisitedArticle" onClick={() => navigateToDetails()}>
+    <div className="MostVisitedArticle" onClick={navigateToDetails}>
       <div className="art_img">
         <img
           src={article.images[0]}
           alt={article.title}
           title={article.title}
+          srcSet={`${article.images[0]} 480w`}
         />
       </div>
       <div className="art_details">

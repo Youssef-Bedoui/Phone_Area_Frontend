@@ -1,10 +1,13 @@
 .singleCard {
-  width: 250px;
-  height: 350px;
-  background-color: #ffffffee;
+  height: 300px;
+  width: 400px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   overflow: hidden;
   border-radius: 5px;
-
+  border: 2px solid #fff;
+  &:last-child {
+    flex: none;
+  }
   .image_section {
     width: 100%;
     height: 70%;
@@ -12,7 +15,7 @@
     img {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: fill;
     }
     &::after {
       content: "";
@@ -21,23 +24,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, transparent 85%, #ffffffee 100%);
+      background: linear-gradient(to bottom, transparent 95%, #a1c4fd 100%);
       pointer-events: none;
     }
   }
   .cardDetails {
     padding: 0 10px;
+    filter: contrast(1.2);
     .card_title {
-      font-size: 16px;
+      font-size: 18px;
+      letter-spacing: 0.5px;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       text-overflow: ellipsis;
       overflow: hidden;
-    }
-    .card_date {
-      font-size: 13px;
-      color: rgb(0, 68, 255);
+            font-family: "Inter", sans-serif;
+
     }
   }
   &:hover {
@@ -46,9 +49,13 @@
       color: rgb(2, 105, 105);
       transition: 0.2s ease;
     }
+    .image_section img {
+      filter: brightness(1.1);
+      transition: 0.2s ease;
+    }
   }
-  @media (max-width: 870px) {
-      width: 200px;
-      height: auto
+  @media (max-width: 780px) {
+    flex: 1 30%;
+    height: auto;
   }
 }

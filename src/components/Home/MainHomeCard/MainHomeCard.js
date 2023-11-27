@@ -18,6 +18,8 @@ function MainHomeCard({ article }) {
           src={article.images}
           alt={article.title}
           title={article.title}
+          loading="lazy"
+          srcSet={`${article.images} 480w`}
         />
       </div>
       <div className="mainTitle">

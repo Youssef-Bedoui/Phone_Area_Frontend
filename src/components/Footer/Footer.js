@@ -6,7 +6,11 @@ function Footer() {
   return (
     <div id="footer">
       <div className="footer_img">
-        <img alt="PhoneArea_logo" src="assets/images/logo_ransparent.png" />
+        <img
+          alt="PhoneArea_logo"
+          src="assets/images/logo_ransparent.png"
+          loading="lazy"
+        />
       </div>
       <div className="right_info">
         <div className="menu_links">

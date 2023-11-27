@@ -9,11 +9,12 @@ import {
 } from "../../Redux/features/PhoneDealsSlice";
 import RightReviews from "../SecondarySections/RightReviews/RightReviews";
 import AdsComponent from "../AdsComponent/AdsComponent";
+import InfoIcon from "@mui/icons-material/Info";
 
 function PhoneDeals() {
   const dispatch = useDispatch();
   const [selectedStore, setSelectedStore] = useState("all");
-  const PhoneDealsArticle = useSelector(
+  const phoneDealsArticle = useSelector(
     (state) => state.PhoneDeals.dealsArticles
   );
 
@@ -42,6 +43,7 @@ function PhoneDeals() {
       <div className="dealsSection">
         <div className="filter_container">
           <p className="header_parag">
+            <InfoIcon className="info_icon" />
             We offer you the best deals on the market with a set of products in{" "}
             <span className="top">TOP discounts </span> .<br /> We constantly
             follow the prices and update this section to make you up To Date for
@@ -56,10 +58,9 @@ function PhoneDeals() {
           >
             <option value="all">All Stores</option>
             <option value="Amazon">AMAZON</option>
-            <option value="AliBaba">ALIBABA</option>
           </select>
         </div>
-        {PhoneDealsArticle.map((phone) => (
+        {phoneDealsArticle.map((phone) => (
           <DealCard key={phone.id} phone={phone} />
         ))}
       </div>

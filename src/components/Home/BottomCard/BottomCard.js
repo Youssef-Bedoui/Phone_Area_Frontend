@@ -13,7 +13,13 @@ function BottomCards({ article }) {
         navigate(`article/${article.title}`, { state: { article: article } });
       }}
     >
-      <img src={article.images[0]} alt={article.title} title={article.title} />
+      <img
+        src={article.images[0]}
+        alt={article.title}
+        title={article.title}
+        loading="lazy"
+        srcSet={`${article.images[0]} 480w`}
+      />
       <h3>{article.title}</h3>
     </div>
   );

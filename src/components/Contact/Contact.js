@@ -3,6 +3,7 @@ import "./Contact.scss";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { NavLink } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import ContactForm from "./ContactForm/ContactForm";
 function Contact() {
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -20,11 +21,10 @@ function Contact() {
       </p>
       <p className="second_parag">
         If you want to publish your blog online on our website, please don't
-        hesitate to send your article by email.
+        hesitate to send your article by message(the form below).
       </p>
       <h3 className="email">
-        Email : <a href="mailto:info@phonearea.com">info@phonearea.com</a>
-        <br />
+        <ContactForm />
         Social Media :{" "}
         <div className="media">
           <a
@@ -36,7 +36,6 @@ function Contact() {
             <FacebookIcon />
             Facebook
           </a>{" "}
-
         </div>
       </h3>
       <p className="last_parag">
@@ -48,7 +47,7 @@ function Contact() {
         If you have an online web store, or any kind of stores related to
         Technology and Phones, we provide you with opportunity to boost your
         incomes by showing your advertise on our website . Don't hesitate to get
-        in touch with us by email.
+        in touch with us by filling the form above.
       </p>
       <div className="links">
         <NavLink to="/privacy">Privacy</NavLink>
