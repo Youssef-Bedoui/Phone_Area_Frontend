@@ -12,7 +12,7 @@ import {
   fetchHomeArticles,
   hideSearchModal,
 } from "../../Redux/features/HomeSlice";
-import RightReviews from "../SecondarySections/RightReviews/RightReviews";
+import RightTechNews from "../SecondarySections/RightTechNews/RightTechNews";
 import AdsComponent from "../AdsComponent/AdsComponent";
 import {
   selectMainArticle,
@@ -45,23 +45,23 @@ function Home() {
       {mainArticle && <MainHomeCard article={mainArticle} />}
       <div className="rightMainCards">
         {RightArticles.map((article) => (
-          <RightMainCard key={article.id} article={article} />
+          <RightMainCard key={article._id} article={article} />
         ))}
       </div>
       <div className="BottomCards">
         {BottomArticles.map((article) => (
-          <BottomCards key={article.id} article={article} />
+          <BottomCards key={article._id} article={article} />
         ))}
       </div>
       <div className="homeArticles">
         <div className="articleContainer">
           {HomeArticles.map((article) => (
-            <HomeArticle key={article.id} article={article} />
+            <HomeArticle key={article._id} article={article} />
           ))}
         </div>
         <div className="rightSection">
           <AdsComponent />
-          <RightReviews />
+          <RightTechNews/>
         </div>
       </div>
     </div>

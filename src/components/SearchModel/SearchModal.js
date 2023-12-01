@@ -8,20 +8,23 @@ import {
   hideSearchModal,
   searchNews,
 } from "../../Redux/features/HomeSlice";
-import { fetchReviews, searchReviews } from "../../Redux/features/ReviewSlice";
+import {
+  fetchTechNews,
+  searchTechNews,
+} from "../../Redux/features/TechNewsSlice";
 import { fetchApps, searchApps } from "../../Redux/features/PhoneAppsSlice";
 
 function SearchModel() {
   const dispatch = useDispatch();
   const NewsArticles = useSelector((state) => state.HomeArticles.articles);
-  const ReviewsArticles = useSelector((state) => state.Reviews.reviews);
+  const TechNewsArticles = useSelector((state) => state.TechNews.techNews);
   const PhoneApps = useSelector((state) => state.PhoneApps.appArticles);
 
   const NewsSearchArticles = useSelector(
     (state) => state.HomeArticles.searchedArticles
   );
-  const ReviewsSearchedArticles = useSelector(
-    (state) => state.Reviews.searchedArticles
+  const TechNewsSearchedArticles = useSelector(
+    (state) => state.TechNews.searchedArticles
   );
   const PhoneSearchedApps = useSelector(
     (state) => state.PhoneApps.searchedArticles
@@ -35,12 +38,12 @@ function SearchModel() {
     const inputValue = e.target.value;
     setSearchInp(inputValue);
     dispatch(searchNews(searchInp));
-    dispatch(searchReviews(searchInp));
+    dispatch(searchTechNews(searchInp));
     dispatch(searchApps(searchInp));
 
     if (inputValue.length === 0) {
       dispatch(fetchHomeArticles());
-      dispatch(fetchReviews(""));
+      dispatch(fetchTechNews(""));
       dispatch(fetchApps(""));
     }
   };
@@ -54,8 +57,8 @@ function SearchModel() {
       case "News":
         dispatch(searchNews(searchInp));
         break;
-      case "Reviews":
-        dispatch(searchReviews(searchInp));
+      case "Tech News":
+        dispatch(searchTechNews(searchInp));
         break;
       case "Apps":
         dispatch(searchApps(searchInp));
@@ -68,10 +71,10 @@ function SearchModel() {
     switch (activeCategory) {
       case "News":
         return searchInp.length === 0 ? NewsArticles : NewsSearchArticles;
-      case "Reviews":
+      case "Tech News":
         return searchInp.length === 0
-          ? ReviewsArticles
-          : ReviewsSearchedArticles;
+          ? TechNewsArticles
+          : TechNewsSearchedArticles;
       case "Apps":
         return searchInp.length === 0 ? PhoneApps : PhoneSearchedApps;
       default:
@@ -84,9 +87,9 @@ function SearchModel() {
   }, [dispatch]);
 
   useEffect(() => {
-    const allArticles = [...NewsArticles, ...ReviewsArticles, ...PhoneApps];
+    const allArticles = [...NewsArticles, ...TechNewsArticles, ...PhoneApps];
     setRecommendedResults(allArticles);
-  }, [NewsArticles, ReviewsArticles, PhoneApps]);
+  }, [NewsArticles, TechNewsArticles, PhoneApps]);
 
   useEffect(() => {
     handleSearch();
@@ -109,7 +112,7 @@ function SearchModel() {
       <div className="category_list">
         <h3>Search results for : {searchInp}</h3>
         <ul className="list">
-          {["News", "Reviews", "Apps"].map((category) => (
+          {["News", "Tech News", "Apps"].map((category) => (
             <li
               key={category}
               className={`list_item ${activeCategory === category && "active"}`}

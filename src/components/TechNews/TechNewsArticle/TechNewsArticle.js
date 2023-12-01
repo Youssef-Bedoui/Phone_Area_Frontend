@@ -1,9 +1,9 @@
 import React from "react";
-import "./ReviewArticle.scss";
+import "./TechNewsArticle.scss";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { useNavigate } from "react-router-dom";
 
-function ReviewArticle({ article }) {
+function TechNewsArticle({ article }) {
   const navigate = useNavigate();
   const formattedDate = new Date(article.date).toLocaleDateString("en-US", {
     weekday: "long",
@@ -16,9 +16,7 @@ function ReviewArticle({ article }) {
     <div
       className="reviewArticle"
       onClick={() => {
-        navigate(`/article/${article.title}`, {
-          state: { article: article },
-        });
+        navigate(`/article/${article.title}/newsArticle/${article._id}`);
       }}
     >
       <div className="review_img">
@@ -40,4 +38,4 @@ function ReviewArticle({ article }) {
   );
 }
 
-export default ReviewArticle;
+export default TechNewsArticle;

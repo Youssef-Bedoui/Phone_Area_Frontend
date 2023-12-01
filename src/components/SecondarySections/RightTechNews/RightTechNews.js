@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import "./RightReviews.scss";
+import "./RightTechNews.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchReviews } from "../../../Redux/features/ReviewSlice";
-import RightReview from "../../Home/RightReview/RightReview";
+import { fetchTechNews } from "../../../Redux/features/TechNewsSlice";
+import RightReview from "../../Home/RightTechNews/RightTechNews";
 import { NavLink } from "react-router-dom";
 
-function RightReviews() {
-  const reviews = useSelector((state) => state.Reviews.reviews);
+function RightTechNews() {
+  const techNews = useSelector((state) => state.TechNews.techNews);
   //select 6 random articles
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -15,25 +15,25 @@ function RightReviews() {
     }
     return array;
   };
-  const shuffledArticles = shuffleArray([...reviews]);
-  const randomSixReviews = shuffledArticles.slice(0, 6);
+  const shuffledArticles = shuffleArray([...techNews]);
+  const randomSixTechNews = shuffledArticles.slice(0, 6);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchReviews({}));
+    dispatch(fetchTechNews({}));
   }, [dispatch]);
 
   return (
     <div className="rightReviews">
-      <h2 className="title">TOP REVIEWS</h2>
-      {randomSixReviews.map((article) => (
+      <h2 className="title">TOP News</h2>
+      {randomSixTechNews.map((article) => (
         <RightReview key={article.id} article={article} />
       ))}
       <NavLink to="/reviews" className="more">
-        See more reviews
+        See more News
       </NavLink>
     </div>
   );
 }
 
-export default RightReviews;
+export default RightTechNews;

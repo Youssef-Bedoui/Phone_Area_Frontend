@@ -10,9 +10,7 @@ function RightMainCard({ article }) {
       key={article.id}
       className="rightCards"
       onClick={() => {
-        navigate(`article/${article.title}`, {
-          state: { article: article },
-        });
+    navigate(`/article/${article.title}/rightArticle/${article._id}`);
       }}
     >
       <div className="image_cont">
@@ -23,7 +21,7 @@ function RightMainCard({ article }) {
           srcSet={`${article.images[0]} 480w`}
         />
       </div>
-      <h6>{article.title}</h6>
+      <h3>{article.title}</h3>
     </div>
   );
 }

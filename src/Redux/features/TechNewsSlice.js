@@ -3,19 +3,19 @@ import axios from "axios";
 import config from "../../config.json";
 
 const initialState = {
-  reviews: [],
+  techNews: [],
   searchedArticles: [],
-  selectedReview: null,
+  selectedArticle: {},
   status: "idle",
   error: null,
 };
 
-export const fetchReviews = createAsyncThunk(
-  "reviews/fetchReviews",
+export const fetchTechNews = createAsyncThunk(
+  "techNews/fetchTechNews",
   async () => {
     try {
       const response = await axios.get(
-        `${config.SERVER_URL}/ReviewsArticles/articles`
+        `${config.SERVER_URL}/TechNewsArticles/articles`
       );
       return response.data;
     } catch (error) {
@@ -24,12 +24,13 @@ export const fetchReviews = createAsyncThunk(
   }
 );
 
-export const fetchReviewById = createAsyncThunk(
-  "reviews/fetchReviewById",
-  async (reviewId) => {
+export const fetchTechNewsById = createAsyncThunk(
+  "techNews/fetchTechNewsById",
+  async (id) => {
+    console.log(id,"slice")
     try {
       const response = await axios.get(
-        `${config.SERVER_URL}/ReviewsArticles/articles/${reviewId}`
+        `${config.SERVER_URL}/TechNewsArticles/articles/${id}`
       );
       return response.data;
     } catch (error) {
@@ -38,12 +39,12 @@ export const fetchReviewById = createAsyncThunk(
   }
 );
 
-export const searchReviews = createAsyncThunk(
-  "search/reviews",
+export const searchTechNews = createAsyncThunk(
+  "search/techNews",
   async (value) => {
     try {
       const response = await axios.get(
-        `${config.SERVER_URL}/search/reviews/${value}`
+        `${config.SERVER_URL}/search/TechNewsArticles/${value}`
       );
       return response.data;
     } catch (error) {
@@ -52,50 +53,50 @@ export const searchReviews = createAsyncThunk(
   }
 );
 
-const reviewsSlice = createSlice({
-  name: "reviews",
+const techNews = createSlice({
+  name: "techNews",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchReviews.pending, (state) => {
+      .addCase(fetchTechNews.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchReviews.fulfilled, (state, action) => {
+      .addCase(fetchTechNews.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.reviews = action.payload;
+        state.techNews = action.payload;
       })
-      .addCase(fetchReviews.rejected, (state, action) => {
+      .addCase(fetchTechNews.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       })
-      .addCase(fetchReviewById.pending, (state) => {
+      .addCase(fetchTechNewsById.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchReviewById.fulfilled, (state, action) => {
+      .addCase(fetchTechNewsById.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.selectedReview = action.payload;
+        state.selectedArticle = action.payload;
       })
-      .addCase(fetchReviewById.rejected, (state, action) => {
+      .addCase(fetchTechNewsById.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       })
-      .addCase(searchReviews.pending, (state) => {
+      .addCase(searchTechNews.pending, (state) => {
         state.status = "loading";
       })
 
-      .addCase(searchReviews.fulfilled, (state, action) => {
+      .addCase(searchTechNews.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.searchedArticles = action.payload;
       })
 
-      .addCase(searchReviews.rejected, (state, action) => {
+      .addCase(searchTechNews.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });
   },
 });
 
-export const reviewsActions = reviewsSlice.actions;
+export const techNewsActions = techNews.actions;
 
-export default reviewsSlice.reducer;
+export default techNews.reducer;

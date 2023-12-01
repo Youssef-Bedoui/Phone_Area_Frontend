@@ -4,6 +4,7 @@ import config from "../../config.json";
 
 const initialState = {
   articles: [],
+  selectedArticle: {},
   status: "idle",
   error: null,
 };
@@ -58,7 +59,7 @@ const homeBottomSlice = createSlice({
       })
       .addCase(getHomeBottomArticleById.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.articles = [action.payload]; 
+        state.selectedArticle = action.payload; 
       })
       .addCase(getHomeBottomArticleById.rejected, (state, action) => {
         state.status = "failed";

@@ -2,14 +2,11 @@ import React from "react";
 import "./HomeArticle.scss";
 import { useNavigate } from "react-router-dom";
 
-function HomeArticle({ article }) {
+function HomeArticle({ article,id }) {
   const navigate = useNavigate();
   const formattedDate = new Date(article.date).toLocaleDateString("en-US");
-
   const handleClick = () => {
-    navigate(`article/${article.title}`, {
-      state: { article: article },
-    });
+    navigate(`/article/${article.title}/homeArticle/${article._id}`);
   };
 
   return (

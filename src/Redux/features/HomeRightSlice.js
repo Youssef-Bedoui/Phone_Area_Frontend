@@ -6,6 +6,7 @@ import config from "../../config.json";
 
 const initialState = {
   articles: [],
+  selectedArticle: {},
   status: "idle",
   error: null,
 };
@@ -27,9 +28,10 @@ export const fetchRightArticles = createAsyncThunk(
 export const getRightArticleById = createAsyncThunk(
   "right/getRightArticleById",
   async (articleId) => {
+    console.log("fetched");
     try {
       const response = await axios.get(
-        `${config.SERVER_URL}/rightArticles/${articleId}`
+        `${config.SERVER_URL}/HomeRightArticles/articles/${articleId}`
       );
       return response.data;
     } catch (error) {
@@ -60,7 +62,7 @@ const rightSlice = createSlice({
       })
       .addCase(getRightArticleById.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.articles = [action.payload];
+        state.selectedArticle = action.payload;
       })
       .addCase(getRightArticleById.rejected, (state, action) => {
         state.status = "failed";

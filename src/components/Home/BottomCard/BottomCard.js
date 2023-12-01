@@ -10,7 +10,7 @@ function BottomCards({ article }) {
       key={article.id}
       className="bottomCard"
       onClick={() => {
-        navigate(`article/${article.title}`, { state: { article: article } });
+    navigate(`/article/${article.title}/bottomArticle/${article._id}`);
       }}
     >
       <img

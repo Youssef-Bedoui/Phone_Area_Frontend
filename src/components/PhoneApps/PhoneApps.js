@@ -8,7 +8,17 @@ import AdsComponent from "../AdsComponent/AdsComponent";
 
 function PhoneApps() {
   const dispatch = useDispatch();
-  const phoneApps = useSelector((state) => state.PhoneApps.appArticles);
+  const phoneApps = useSelector((state) => {
+    const sortedArticles = [...state.PhoneApps.appArticles].sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+
+      return dateB - dateA;
+    });
+
+    return sortedArticles;
+  });
+
 
   useEffect(() => {
     dispatch(fetchApps({}));

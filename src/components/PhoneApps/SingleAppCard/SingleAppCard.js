@@ -8,9 +8,7 @@ function SingleAppCard({ article }) {
   return (
     <div
       onClick={() => {
-        navigate(`/article/${article.title}`, {
-          state: { article: article },
-        });
+        navigate(`/article/${article.title}/appsArticle/${article._id}`);
       }}
       className="singleCard"
     >

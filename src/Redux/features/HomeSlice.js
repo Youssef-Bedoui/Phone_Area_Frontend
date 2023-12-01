@@ -6,7 +6,7 @@ const initialState = {
   showSearchModal: false,
   articles: [],
   searchedArticles: [],
-  selectedArticle: null,
+  selectedArticle: {},
   status: "idle",
   error: null,
 };

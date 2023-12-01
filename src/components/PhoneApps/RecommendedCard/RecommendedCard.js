@@ -8,9 +8,7 @@ function RecommendedCard({ article }) {
     <div
       className="recommendedCard"
       onClick={() => {
-        navigate(`/article/${article.title}`, {
-          state: { article: article },
-        });
+        navigate(`/article/${article.title}/appsArticle${article._id}`);
       }}
     >
       <div className="image_container">

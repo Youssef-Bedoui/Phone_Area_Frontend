@@ -7,11 +7,13 @@ import CameraIcon from "@mui/icons-material/Camera";
 import CameraFrontIcon from "@mui/icons-material/CameraFront";
 import PaletteIcon from "@mui/icons-material/Palette";
 
+
 function DealCard({ phone }) {
   console.log(phone, "phone");
   return (
     <a href={phone.link} target="_blank" className="phoneCard" rel="noreferrer">
       <div className="phone_img">
+      
         <img
           src={phone.image}
           alt={phone.model}

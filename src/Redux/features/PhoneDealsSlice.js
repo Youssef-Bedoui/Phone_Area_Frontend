@@ -4,7 +4,6 @@ import config from "../../config.json";
 
 const initialState = {
   dealsArticles: [],
-  selectedArticle: null,
   status: "idle",
   error: null,
 };

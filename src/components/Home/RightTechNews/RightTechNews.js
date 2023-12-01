@@ -1,5 +1,5 @@
 import React from "react";
-import "./RightReview.scss";
+import "./RightTechNews.scss";
 import { useNavigate } from "react-router-dom";
 
 function RightReview({ article }) {
@@ -10,9 +10,7 @@ function RightReview({ article }) {
     <div
       className="rightReview"
       onClick={() => {
-        navigate(`/article/${article.title}`, {
-          state: { article: article },
-        });
+        navigate(`/article/${article.title}/newsArticle/${article._id}`);
       }}
     >
       <div className="art_img">

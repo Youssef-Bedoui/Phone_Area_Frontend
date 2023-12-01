@@ -6,9 +6,7 @@ function MostVisitedArticle({ article }) {
   const navigate = useNavigate();
 
   const navigateToDetails = () => {
-    navigate(`/article/${article.title}`, {
-      state: { article: article },
-    });
+    navigate(`/article/${article.title}/newsArticle/${article._id}`);
   };
 
   return (

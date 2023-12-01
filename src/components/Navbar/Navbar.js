@@ -25,9 +25,9 @@ function Navbar() {
         <NavLink
           activeClassName="active"
           className="menuLinkItem"
-          to="/reviews"
+          to="/techNews"
         >
-          REVIEWS
+          TECH NEWS
         </NavLink>
         <NavLink
           activeClassName="active"

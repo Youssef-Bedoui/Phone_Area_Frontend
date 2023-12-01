@@ -9,9 +9,7 @@ function SingleMoreArticle({ article }) {
     <div
       className="more_article"
       onClick={() => {
-        navigate(`/article/${article.title}`, {
-          state: { article: article },
-        });
+        navigate(`/article/${article.title}/newsArticle/${article._id}`);
         window.scrollTo("top", 0);
       }}
     >

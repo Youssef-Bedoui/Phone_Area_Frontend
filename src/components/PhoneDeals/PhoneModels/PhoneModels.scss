@@ -1,6 +1,5 @@
 .models {
-  padding: 10px;
-  border: 1px solid lightgray;
+  border: 2px solid black;
   background-image: linear-gradient(120deg, #0000007e 0%, #4a4b4b 100%);
   border-radius: 5px;
   .models_title {
@@ -22,9 +21,13 @@
       min-width: 70px;
       max-width: fit-content;
       text-transform: uppercase;
+      text-align: left;
       &:hover {
         cursor: pointer;
         text-decoration: underline;
+      }
+      &:first-child{
+        color: aqua;
       }
     }
   }

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./Reviews.scss";
-import ReviewArticle from "./ReviewArticle/ReviewArticle";
+import "./TechNews.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchReviews } from "../../Redux/features/ReviewSlice";
-import MostVisitedReviews from "../SecondarySections/MostVisitedReviews/MostVisitedReviews";
+import { fetchTechNews } from "../../Redux/features/TechNewsSlice";
 import AdsComponent from "../AdsComponent/AdsComponent";
-import { selectReviewsArticles } from "../Home/selectors";
+import { selectTechNewssArticles } from "../Home/selectors";
+import MostVisitedNews from "../SecondarySections/MostVisitedNews/MostVisitedNews";
+import TechNewsArticle from "./TechNewsArticle/TechNewsArticle";
 
-function Reviews() {
+function TechNews() {
   const dispatch = useDispatch();
-  const reviewsArticles = useSelector(selectReviewsArticles);
+  const reviewsArticles = useSelector(selectTechNewssArticles);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -17,11 +17,11 @@ function Reviews() {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchReviews({}));
+    dispatch(fetchTechNews({}));
   }, [dispatch]);
 
   // Filter reviews based on the search query
-  const filteredReviews = reviewsArticles.filter((article) => {
+  const filteredTechNews = reviewsArticles.filter((article) => {
     const phoneModel = article.title ? article.title.toLowerCase() : "";
     return phoneModel.includes(searchQuery.toLowerCase());
   });
@@ -30,24 +30,24 @@ function Reviews() {
     <div className="reviews">
       <div className="left_section">
         <AdsComponent />
-        <MostVisitedReviews />
+        <MostVisitedNews />
         <AdsComponent />
       </div>
       <div className="reviews_cont">
         <div className="search_bar">
           <input
             type="text"
-            placeholder="Search for phone ..."
+            placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        {filteredReviews.map((article) => (
-          <ReviewArticle key={article.id} article={article} />
+        {filteredTechNews.map((article) => (
+          <TechNewsArticle key={article.id} article={article} />
         ))}
       </div>
     </div>
   );
 }
 
-export default Reviews;
+export default TechNews;

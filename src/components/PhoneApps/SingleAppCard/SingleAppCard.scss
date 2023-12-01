@@ -1,6 +1,6 @@
 .singleCard {
   height: 300px;
-  width: 400px;
+  width: 380px;
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   overflow: hidden;
   border-radius: 5px;
@@ -55,7 +55,8 @@
     }
   }
   @media (max-width: 780px) {
-    flex: 1 30%;
+    flex: 1 50%;
+    width: 100%;
     height: auto;
   }
 }

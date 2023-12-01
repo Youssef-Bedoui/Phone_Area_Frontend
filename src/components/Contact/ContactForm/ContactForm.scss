@@ -90,3 +90,24 @@ $primaryColorText: #02c8f1;
     }
   }
 }
+@media (max-width: 760px) {
+  #contact {
+    min-height: fit-content;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+   margin: 10px;
+    .left_section {
+      padding: 10px;
+      order: 1;
+    }
+    .right_section {
+      order: 2;
+      padding: 0 30px;
+    }
+  }
+  h3 {
+    margin: 10px auto;
+    margin-bottom: 20px;
+  }
+}

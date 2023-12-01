@@ -16,7 +16,7 @@ function Footer() {
         <div className="menu_links">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/phoneDeals">Phone Deals</NavLink>
-          <NavLink to="/reviews">Reviews</NavLink>
+          <NavLink to="/techNews">Tech News</NavLink>
           <NavLink to="/phoneDeals">Deals</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <NavLink to="/privacy">Privacy</NavLink>

@@ -45,8 +45,7 @@
         color: #4267b2;
       }
       .instagram {
-        color: #F56040
-;
+        color: #f56040;
       }
     }
   }
@@ -86,11 +85,12 @@
       object-fit: contain;
     }
   }
-  .advertisment{
-    color: rgb(212, 208, 208) ;
+  .advertisment {
+    color: rgb(212, 208, 208);
   }
   @media (max-width: 780px) {
     width: 95%;
     margin: 40px auto;
+    border-left: unset;
   }
 }

@@ -9,7 +9,7 @@ function SearchResultCard({ article }) {
   const dispatch = useDispatch();
 
   const handleCardClick = () => {
-    navigate(`/article/${article.title}`, {
+    navigate(`/SearchedArticles/${article.title}/`, {
       state: { article: article },
     });
     dispatch(hideSearchModal());

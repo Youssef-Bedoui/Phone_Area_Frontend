@@ -5,6 +5,7 @@ import config from "../../config.json";
 const initialState = {
   appArticles: [],
   searchedArticles: [],
+  selectedArticle: {},
   status: "idle",
   error: null,
 };
@@ -15,6 +16,20 @@ export const fetchApps = createAsyncThunk(
     try {
       const response = await axios.get(
         `${config.SERVER_URL}/PhoneApps/articles`
+      );
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+);
+
+export const fetchAppsArticleById = createAsyncThunk(
+  "apps/fetchArticleById",
+  async (id) => {
+    try {
+      const response = await axios.get(
+        `${config.SERVER_URL}/PhoneApps/articles/${id}`
       );
       return response.data;
     } catch (error) {
@@ -37,7 +52,11 @@ export const searchApps = createAsyncThunk("search/apps", async (value) => {
 const AppsSlice = createSlice({
   name: "apps",
   initialState,
-  reducers: {},
+  reducers: {
+    setSelectedArticle: (state, action) => {
+      state.selectedArticle = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchApps.pending, (state) => {
       state.status = "loading";
@@ -52,6 +71,20 @@ const AppsSlice = createSlice({
       state.status = "failed";
       state.error = action.error.message;
     });
+
+    builder.addCase(fetchAppsArticleById.pending, (state, action) => {
+      state.status = "loading";
+    });
+    builder.addCase(fetchAppsArticleById.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.selectedArticle = action.payload;
+    });
+
+    builder.addCase(fetchAppsArticleById.rejected, (state, action) => {
+      state.status = "failed";
+      state.error = action.error.message;
+    });
+
     builder.addCase(searchApps.pending, (state) => {
       state.status = "loading";
     });
@@ -68,6 +101,6 @@ const AppsSlice = createSlice({
   },
 });
 
-export const AppsActions = AppsSlice.actions;
+export const AppsActions = { ...AppsSlice.actions, fetchAppsArticleById };
 
 export default AppsSlice.reducer;

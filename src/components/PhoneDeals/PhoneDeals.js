@@ -7,7 +7,7 @@ import {
   fetchPhoneDealsArticles,
   filterDeals,
 } from "../../Redux/features/PhoneDealsSlice";
-import RightReviews from "../SecondarySections/RightReviews/RightReviews";
+import RightReviews from "../SecondarySections/RightTechNews/RightTechNews";
 import AdsComponent from "../AdsComponent/AdsComponent";
 import InfoIcon from "@mui/icons-material/Info";
 

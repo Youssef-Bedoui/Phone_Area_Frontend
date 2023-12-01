@@ -28,7 +28,7 @@ function Contact() {
         Social Media :{" "}
         <div className="media">
           <a
-            href="https://www.facebook.com/profile.php?id=100089093272998"
+            href="https://www.facebook.com/profile.php?id=61553976273235"
             target="_blank"
             className="facebook"
             rel="noreferrer"

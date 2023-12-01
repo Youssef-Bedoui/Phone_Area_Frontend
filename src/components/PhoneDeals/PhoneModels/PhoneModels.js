@@ -19,20 +19,12 @@ function PhoneModels() {
     <div className="models">
       <h4 className="models_title">PHONE MODELS DEALS</h4>
       <ul>
+        <li onClick={() => filterModels("")}>All Models</li>
         <li onClick={() => filterModels("Motorola")}>Motorola</li>
-        <li onClick={() => filterModels("Samsung")}>Samsung</li>
-        <li onClick={() => filterModels("Xiaomi")}>Xiaomi</li>
-        <li>Iphone</li>
-        <li>Apple</li>
-        <li>Nokia</li>
-        <li>Poco</li>
-        <li>Vivo</li>
-        <li>Huawei</li>
-        <li>Infinix</li>
-        <li>Lenovo</li>
-        <li>Asus</li>
-        <li>Google</li>
-        <li>Alcatel</li>
+        <li onClick={() => filterModels("SAMSUNG")}>Samsung</li>
+        <li onClick={() => filterModels("Google")}>Google Pixel</li>
+        <li onClick={() => filterModels("Nokia")}>Nokia</li>
+        
       </ul>
     </div>
   );

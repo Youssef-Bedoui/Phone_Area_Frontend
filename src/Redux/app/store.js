@@ -5,7 +5,7 @@ import HomeBigSlice from "../features/HomeBigSlice";
 import HomeRightSlice from "../features/HomeRightSlice";
 import HomeBottomSlice from "../features/HomeBottomSlice";
 import HomeArtSlice from "../features/HomeSlice";
-import ReviewsSlice from "../features/ReviewSlice";
+import TechNewsSlice from "../features/TechNewsSlice";
 import PhoneDealsSlice from "../features/PhoneDealsSlice";
 import PhoneAppsSlice from "../features/PhoneAppsSlice";
 
@@ -25,8 +25,8 @@ const persistHomeConfig = {
   key: "HomeArticles",
   storage,
 };
-const persistReviewsConfig = {
-  key: "ReviewsArticles",
+const persistTechNewsConfig = {
+  key: "TechNewsArticles",
   storage,
 };
 const persistDealsConfig = {
@@ -51,9 +51,9 @@ const persistedHomeBottomReducer = persistReducer(
   HomeBottomSlice
 );
 const persistedHomeArtReducer = persistReducer(persistHomeConfig, HomeArtSlice);
-const persistedReviewsReducer = persistReducer(
-  persistReviewsConfig,
-  ReviewsSlice
+const persistedTechNewsReducer = persistReducer(
+  persistTechNewsConfig,
+  TechNewsSlice
 );
 const persistedDealssReducer = persistReducer(
   persistDealsConfig,
@@ -67,7 +67,7 @@ export default configureStore({
     HomeRight: persistedHomeRightReducer,
     HomeBottom: persistedHomeBottomReducer,
     HomeArticles: persistedHomeArtReducer,
-    Reviews: persistedReviewsReducer,
+    TechNews: persistedTechNewsReducer,
     PhoneDeals: persistedDealssReducer,
     PhoneApps: persistedAppsReducer,
   },

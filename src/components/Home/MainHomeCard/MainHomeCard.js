@@ -8,9 +8,7 @@ function MainHomeCard({ article }) {
     <div
       className="largeCard"
       onClick={() => {
-        navigate(`article/${article.title}`, {
-          state: { article: article },
-        });
+        navigate(`/article/${article.title}/mainArticle/${article._id}`);
       }}
     >
       <div className="mainImage">
@@ -23,7 +21,7 @@ function MainHomeCard({ article }) {
         />
       </div>
       <div className="mainTitle">
-        <h3>{article.title}</h3>
+        <h2>{article.title}</h2>
       </div>
     </div>
   );
