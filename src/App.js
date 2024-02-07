@@ -28,7 +28,7 @@ function App() {
         {searchModal && <SearchModel />}
 
         <Routes>
-          <Route path="/" exact element=<Home /> />
+          <Route path="/" element=<Home /> />
           <Route path="/phoneDeals" element=<PhoneDeals /> />
           <Route path="/techNews" element=<TechNews /> />
           <Route path="/contact" element=<Contact /> />

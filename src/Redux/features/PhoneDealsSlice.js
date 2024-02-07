@@ -56,7 +56,9 @@ const DealsSlice = createSlice({
       })
       .addCase(filterDeals.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.dealsArticles = action.payload;
+        state.dealsArticles = action.payload.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );;
       })
       .addCase(filterDeals.rejected, (state, action) => {
         state.status = "failed";

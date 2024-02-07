@@ -27,7 +27,6 @@ export const fetchTechNews = createAsyncThunk(
 export const fetchTechNewsById = createAsyncThunk(
   "techNews/fetchTechNewsById",
   async (id) => {
-    console.log(id,"slice")
     try {
       const response = await axios.get(
         `${config.SERVER_URL}/TechNewsArticles/articles/${id}`

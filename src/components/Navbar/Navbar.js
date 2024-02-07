@@ -12,10 +12,10 @@ function Navbar() {
       <NavLink className="menuNavNavLinkItem logo" to="/">
         <img
           className="logo_img"
-          src="assets/images/logo.png"
+          src="../../../public/assets/images/logo-transparent-png.png"
           alt="PhoneArea_logo"
           loading="lazy"
-          srcSet="assets/images/logo.png 480w, assets/images/logo.png 800w, assets/images/logo.png 1200w"
+          srcSet="assets/images/logo-transparent-png 480w, assets/images/logo-transparent-png 800w, assets/images/logo-transparent-png.png 1200w"
         />
       </NavLink>
       <div className="menu">

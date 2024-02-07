@@ -17,6 +17,7 @@ import { getRightArticleById } from "../../Redux/features/HomeRightSlice";
 import { getHomeBottomArticleById } from "../../Redux/features/HomeBottomSlice";
 import { fetchTechNewsById } from "../../Redux/features/TechNewsSlice";
 import { fetchAppsArticleById } from "../../Redux/features/PhoneAppsSlice";
+import RightPhonesDeals from "../SecondarySections/RightPhonesDeals/RightPhonesDeals";
 
 function ArticleDetails() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function ArticleDetails() {
   const trimmedId = id.trim();
 
   const HomeArticles = useSelector((state) => state.HomeArticles.articles);
+
   // loading state
   const selectHomeArticlesLoading = useSelector(
     (state) => state.HomeArticles.status === "loading"
@@ -117,11 +119,13 @@ function ArticleDetails() {
     }
     return array;
   };
-  const shuffledArticles = shuffleArray([...HomeArticles]);
+
+  // Ensure HomeArticles is available before shuffling
+  const shuffledArticles = HomeArticles ? shuffleArray([...HomeArticles]) : [];
   const randomSixArticles = shuffledArticles.slice(0, 6);
-  /////////////////////////////////////
+
   const formattedDate =
-    article.date &&
+    article?.date &&
     new Date(article.date).toLocaleDateString("en-US", {
       weekday: "long",
       year: "numeric",
@@ -161,65 +165,62 @@ function ArticleDetails() {
               </h6>
             </div>
             <div className="desc_parag">
-              {article?.description &&
-                article.description.map((paragraph, index) => (
-                  <div key={index} className="singleParag">
-                    {paragraph?.title && (
-                      <h3 className="inner_title">{paragraph?.title}</h3>
-                    )}
-                    {paragraph?.innerTitle && (
-                      <h3 className="second_title">{paragraph?.innerTitle}</h3>
-                    )}
-                    {paragraph?.paragraph && (
-                      <p className="paragraph">{paragraph?.paragraph}</p>
-                    )}
-                    {paragraph?.list && paragraph?.list.length !== 0 && (
-                      <table className="spec_table">
-                        <tbody>
-                          {paragraph?.list.map((item, index) => {
-                            const colonIndex = item.indexOf(": ");
-                            const title =
-                              colonIndex !== -1
-                                ? item.substring(0, colonIndex + 2)
-                                : null;
-                            const content =
-                              colonIndex !== -1
-                                ? item.substring(colonIndex + 2)
-                                : item;
+              {article?.description?.map((paragraph, index) => (
+                <div key={index} className="singleParag">
+                  {paragraph?.title && (
+                    <h3 className="inner_title">{paragraph?.title}</h3>
+                  )}
+                  {paragraph?.innerTitle && (
+                    <h3 className="second_title">{paragraph?.innerTitle}</h3>
+                  )}
+                  {paragraph?.paragraph && (
+                    <p className="paragraph">{paragraph?.paragraph}</p>
+                  )}
+                  {paragraph?.list && paragraph?.list.length !== 0 && (
+                    <table className="spec_table">
+                      <tbody>
+                        {paragraph?.list.map((item, index) => {
+                          const colonIndex = item.indexOf(": ");
+                          const title =
+                            colonIndex !== -1
+                              ? item.substring(0, colonIndex + 2)
+                              : null;
+                          const content =
+                            colonIndex !== -1
+                              ? item.substring(colonIndex + 2)
+                              : item;
 
-                            return (
-                              <tr key={index}>
-                                {title && (
-                                  <td className="spec_title">{title}</td>
-                                )}
-                                <td className="spec_content">{content}</td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    )}
+                          return (
+                            <tr key={index}>
+                              {title && <td className="spec_title">{title}</td>}
+                              <td className="spec_content">{content}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  )}
 
-                    {paragraph?.image && (
-                      <img
-                        className="secondary_image"
-                        src={paragraph?.image}
-                        alt={paragraph?.title}
-                        title={paragraph?.title}
-                      />
-                    )}
-                    {paragraph?.videoId && (
-                      <div className="videoWrapper">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${paragraph?.videoId}`}
-                          title="YouTube video player"
-                          allowFullScreen
-                          loading="lazy"
-                        ></iframe>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  {paragraph?.image && (
+                    <img
+                      className="secondary_image"
+                      src={paragraph?.image}
+                      alt={paragraph?.title}
+                      title={paragraph?.title}
+                    />
+                  )}
+                  {paragraph?.videoId && (
+                    <div className="videoWrapper">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${paragraph?.videoId}`}
+                        title="YouTube video player"
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
             {article?.author && (
               <h4
@@ -238,7 +239,7 @@ function ArticleDetails() {
                 title={article?.source}
                 rel="nofollow"
               >
-                Source
+                Check source
               </a>
             )}
             <AdsComponent />
@@ -254,6 +255,9 @@ function ArticleDetails() {
             </div>
           </div>
           <div className="advertisements">
+            <div className="rightDeals">
+              <RightPhonesDeals />
+            </div>
             <AdsComponent />
             <AdsComponent />
             <AdsComponent />

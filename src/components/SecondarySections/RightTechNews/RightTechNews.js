@@ -24,12 +24,12 @@ function RightTechNews() {
   }, [dispatch]);
 
   return (
-    <div className="rightReviews">
-      <h2 className="title">TOP News</h2>
+    <div className="rightNews">
+      <h2 className="title">Tech News</h2>
       {randomSixTechNews.map((article) => (
         <RightReview key={article.id} article={article} />
       ))}
-      <NavLink to="/reviews" className="more">
+      <NavLink to="/techNews" className="more">
         See more News
       </NavLink>
     </div>

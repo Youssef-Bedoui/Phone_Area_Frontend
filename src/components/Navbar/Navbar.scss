@@ -19,14 +19,15 @@ $mainColor: #fdfa2d;
   }
   .logo {
     height: 80px;
+    width: 250px;
     max-width: 200px;
     margin-right: 100px;
-    margin-left: 30px;
-
+    margin-left: 20px;
     .logo_img {
       width: auto;
       height: 80px;
-      object-fit: fill;
+      width: 250px;
+      object-fit: contain;
     }
   }
   .menu {
@@ -79,6 +80,10 @@ $mainColor: #fdfa2d;
 
     .logo {
       margin: 0 auto;
+      width: 100% !important;
+      .logo_img{
+        width: 100%;
+      }
     }
     .menu {
       display: flex;

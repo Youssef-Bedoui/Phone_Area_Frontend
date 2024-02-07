@@ -20,6 +20,7 @@ import {
   selectBottomArticles,
   selectHomeArticles,
 } from "./selectors";
+import RightPhonesDeals from "../SecondarySections/RightPhonesDeals/RightPhonesDeals";
 
 function Home() {
   const dispatch = useDispatch();
@@ -62,6 +63,9 @@ function Home() {
         <div className="rightSection">
           <AdsComponent />
           <RightTechNews/>
+          <div className="rightDeals">
+            <RightPhonesDeals/>
+          </div>
         </div>
       </div>
     </div>

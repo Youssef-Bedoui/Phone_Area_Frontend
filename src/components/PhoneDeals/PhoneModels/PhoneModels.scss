@@ -9,19 +9,30 @@
     margin-top: 0;
     text-align: center;
     letter-spacing: 2px;
+    font-weight: 400;
   }
   ul {
     list-style: none;
     color: #fdfa2d;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 30px 10px;
+    gap: 10px 0;
+    padding: 10px;
+    .reset{
+      height: 30px;
+      width: 30px;
+      &:hover{
+        transform: rotate(-360deg);
+        transition: .5s ease;
+        transition-delay: .2s;
+      }
+    }
     li {
-      min-width: 70px;
+      min-width: 25%;
       max-width: fit-content;
       text-transform: uppercase;
-      text-align: left;
+      text-align: center;
       &:hover {
         cursor: pointer;
         text-decoration: underline;

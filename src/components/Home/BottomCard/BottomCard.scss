@@ -5,7 +5,7 @@
   img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
   h3 {
     position: absolute;
@@ -28,7 +28,7 @@
     }
   }
 }
-@media (max-width: 780px) {
+@media (max-width: 860px) {
   .bottomCard {
     width: 100%;
     flex: 1;

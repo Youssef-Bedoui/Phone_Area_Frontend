@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer_img">
         <img
           alt="PhoneArea_logo"
-          src="assets/images/logo_ransparent.png"
+          src="assets/images/logo-png.png"
           loading="lazy"
         />
       </div>

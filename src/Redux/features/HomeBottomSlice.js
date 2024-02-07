@@ -48,7 +48,9 @@ const homeBottomSlice = createSlice({
       })
       .addCase(fetchHomeBottomArticles.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.articles = action.payload;
+        state.articles = action.payload.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );;
       })
       .addCase(fetchHomeBottomArticles.rejected, (state, action) => {
         state.status = "failed";

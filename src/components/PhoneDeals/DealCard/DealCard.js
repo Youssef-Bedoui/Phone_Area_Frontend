@@ -9,7 +9,6 @@ import PaletteIcon from "@mui/icons-material/Palette";
 
 
 function DealCard({ phone }) {
-  console.log(phone, "phone");
   return (
     <a href={phone.link} target="_blank" className="phoneCard" rel="noreferrer">
       <div className="phone_img">

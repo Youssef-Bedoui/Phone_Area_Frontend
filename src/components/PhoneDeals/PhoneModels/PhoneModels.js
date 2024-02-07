@@ -5,6 +5,7 @@ import {
   fetchPhoneDealsArticles,
   filterDeals,
 } from "../../../Redux/features/PhoneDealsSlice";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 function PhoneModels() {
   const dispatch = useDispatch();
@@ -19,12 +20,14 @@ function PhoneModels() {
     <div className="models">
       <h4 className="models_title">PHONE MODELS DEALS</h4>
       <ul>
-        <li onClick={() => filterModels("")}>All Models</li>
-        <li onClick={() => filterModels("Motorola")}>Motorola</li>
+        <li onClick={() => filterModels("")} title="Reset Phone Models"><RestartAltIcon className="reset"/></li>
         <li onClick={() => filterModels("SAMSUNG")}>Samsung</li>
-        <li onClick={() => filterModels("Google")}>Google Pixel</li>
+        <li onClick={() => filterModels("Google")}>Google</li>
+        <li onClick={() => filterModels("Apple")}>Apple</li>
         <li onClick={() => filterModels("Nokia")}>Nokia</li>
-        
+        <li onClick={() => filterModels("Motorola")}>Motorola</li>
+        <li onClick={() => filterModels("Sony")}>Sony</li>
+        <li onClick={() => filterModels("Asus")}>Asus</li>
       </ul>
     </div>
   );

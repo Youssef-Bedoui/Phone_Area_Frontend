@@ -42,7 +42,7 @@
     }
     .desc_parag {
       line-height: 20px;
-          padding: 0 30px;
+      padding: 0 30px;
 
       .singleParag {
         margin: 0;
@@ -93,18 +93,18 @@
             border: 2px solid #dd3f3f;
             box-shadow: 0 0 5px #dd3f3f;
           }
-          td{
+          td {
             padding: 10px;
             min-height: 25px;
           }
-          .spec_title{
-            background-color:#ffffff91 ;
+          .spec_title {
+            background-color: #ffffff91;
             color: #000000;
             border: none !important;
             font-size: 20px;
           }
-          .spec_content{
-            font-family: "Robotto",sans-serif;
+          .spec_content {
+            font-family: "Robotto", sans-serif;
           }
         }
       }
@@ -129,14 +129,13 @@
       font-weight: 400;
     }
     .source {
-      color: #000000;
+      color: #f5f5f5 !important;
       font-size: 18px;
       text-decoration: none;
-      border-bottom: 1px solid #000000;
+      border-bottom: 1px solid orange !important;
       &:hover {
         cursor: pointer;
         color: #dd3f3f;
-        border-bottom: 1px solid #dd3f3f;
         transition: 0.2s ease;
       }
     }
@@ -171,6 +170,10 @@
     background-color: #e4e4e4;
     margin-top: 10%;
     margin-right: 10px;
+    .rightDeals{
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
@@ -188,16 +191,19 @@
       .published {
         font-size: 14px;
       }
+      .desc_parag {
+        padding: 0 10px !important;
+      }
       .moreArticles {
         width: 100%;
       }
       .singleParag {
         padding: 0;
-        .secondary_image{
-        height: auto;
-        min-height: auto !important ;
-        width: 100%;
-      }
+        .secondary_image {
+          height: auto;
+          min-height: auto !important ;
+          width: 100%;
+        }
       }
     }
   }
@@ -206,5 +212,10 @@
     min-height: fit-content;
     margin: 20px auto;
     margin-bottom: 40px;
+    .rightDeals{
+      display: flex;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+    }
   }
 }

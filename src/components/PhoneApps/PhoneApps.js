@@ -9,16 +9,9 @@ import AdsComponent from "../AdsComponent/AdsComponent";
 function PhoneApps() {
   const dispatch = useDispatch();
   const phoneApps = useSelector((state) => {
-    const sortedArticles = [...state.PhoneApps.appArticles].sort((a, b) => {
-      const dateA = new Date(a.date).getTime();
-      const dateB = new Date(b.date).getTime();
-
-      return dateB - dateA;
-    });
-
-    return sortedArticles;
+    const shuffledApps = [...state.PhoneApps.appArticles].sort(() => 0.5 - Math.random());
+    return shuffledApps;
   });
-
 
   useEffect(() => {
     dispatch(fetchApps({}));
@@ -26,14 +19,14 @@ function PhoneApps() {
 
   useEffect(() => {
     window.scrollTo("top", 0);
-  });
+  }, []);
 
   return (
     <div className="apps">
       <div className="recommendedApps">
         <AdsComponent />
         <h3 className="recommended_title">RECOMMENDED APPS</h3>
-        {phoneApps.slice(0.5).map((article) => (
+        {phoneApps.slice(0, 5).map((article) => (
           <RecommendedCard article={article} key={article.id} />
         ))}
       </div>

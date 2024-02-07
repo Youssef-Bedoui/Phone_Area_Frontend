@@ -28,7 +28,6 @@ export const fetchRightArticles = createAsyncThunk(
 export const getRightArticleById = createAsyncThunk(
   "right/getRightArticleById",
   async (articleId) => {
-    console.log("fetched");
     try {
       const response = await axios.get(
         `${config.SERVER_URL}/HomeRightArticles/articles/${articleId}`
@@ -51,7 +50,9 @@ const rightSlice = createSlice({
       })
       .addCase(fetchRightArticles.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.articles = action.payload;
+        state.articles = action.payload.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
       })
       .addCase(fetchRightArticles.rejected, (state, action) => {
         state.status = "failed";

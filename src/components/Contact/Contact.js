@@ -56,7 +56,7 @@ function Contact() {
 
       <h3 className="thanks">THANK YOU FOR VISITING OUR WEBSITE : )</h3>
       <div className="logo_cont">
-        <img alt="logo" src="/assets/images/logo.png" />
+        <img alt="logo" src="assets/images/logo-png.png" />
       </div>
     </div>
   );
