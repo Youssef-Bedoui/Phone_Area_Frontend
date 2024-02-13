@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router basename="/">
+      <Router basename="/Phone_Area_Frontend">
         <Navbar />
 
         {searchModal && <SearchModel />}
@@ -37,7 +37,7 @@ function App() {
           <Route path="/apps" element=<PhoneApps /> />
           <Route path="/privacy" element=<Privacy /> />
           <Route path="/termsOfUse" element=<TermsOfUse /> />
-          <Route path="**" element=<NotFoundPage /> />
+          <Route path="*" element=<NotFoundPage /> />
         </Routes>
         <Footer />
       </Router>
