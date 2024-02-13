@@ -24,7 +24,7 @@ function Footer() {
         </div>
         <div className="copyright_zone">
           <span className="copyright">
-            &copy; 2023 - ALL Rights Reserved for PhoneArea Website
+            &copy; 2024 - ALL Rights Reserved for PhoneArea Website
           </span>
         </div>
       </div>

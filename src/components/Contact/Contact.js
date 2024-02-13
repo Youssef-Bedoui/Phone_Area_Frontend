@@ -27,12 +27,7 @@ function Contact() {
         <ContactForm />
         Social Media :{" "}
         <div className="media">
-          <a
-            href="https://www.facebook.com/profile.php?id=61553976273235"
-            target="_blank"
-            className="facebook"
-            rel="noreferrer"
-          >
+          <a href="#" target="_blank" className="facebook" rel="noreferrer">
             <FacebookIcon />
             Facebook
           </a>{" "}
