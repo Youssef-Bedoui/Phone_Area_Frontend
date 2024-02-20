@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router basename={"/Phone_Area_Frontend"}>
+      <Router basename={"/"}>
         <Navbar />
 
         {searchModal && <SearchModel />}
